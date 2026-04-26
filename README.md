@@ -54,6 +54,13 @@ python -m rssmds serve --port 9000
 
 Then open http://127.0.0.1:8080 in a browser.
 
+## Tests
+
+```bash
+pytest -v
+mypy rssmds/ --strict
+```
+
 ## Project structure
 
 ```
