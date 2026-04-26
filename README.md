@@ -7,7 +7,7 @@ A terminal RSS/Atom feed reader with a web interface.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install requests pyyaml beautifulsoup4
+pip install -e ".[dev]"
 ```
 
 ## Usage
