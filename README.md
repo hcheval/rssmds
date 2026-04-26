@@ -1,6 +1,6 @@
 # rssmds
 
-A terminal RSS/Atom feed reader with a web interface.
+App for MDS Lab9: A toy CLI RSS feed reader with a web interface.
 
 ## Setup
 
