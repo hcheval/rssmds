@@ -1,5 +1,5 @@
 import pytest
-from feedr import db
+from rssmds import db
 
 
 @pytest.fixture

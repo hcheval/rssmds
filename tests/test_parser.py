@@ -1,5 +1,5 @@
 import pytest
-from feedr.parser import parse_feed, _parse_date
+from rssmds.parser import parse_feed, _parse_date
 
 
 RSS_MINIMAL = """<?xml version="1.0"?>

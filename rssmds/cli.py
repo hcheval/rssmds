@@ -19,7 +19,7 @@ from .formatting import (
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(
-        prog="feedr",
+        prog="rssmds",
         description="A terminal RSS/Atom feed reader.",
     )
     parser.add_argument("--config", help="Path to config file")
@@ -128,7 +128,7 @@ def _cmd_remove(args: argparse.Namespace, conn: sqlite3.Connection) -> None:
 def _cmd_feeds(conn: sqlite3.Connection) -> None:
     feeds = db.list_feeds(conn)
     if not feeds:
-        print("No feeds. Use 'feedr add <url>' to subscribe.")
+        print("No feeds. Use 'rssmds add <url>' to subscribe.")
         return
     print(format_feed_list(feeds))
 
@@ -136,7 +136,7 @@ def _cmd_feeds(conn: sqlite3.Connection) -> None:
 def _cmd_fetch(conn: sqlite3.Connection, config: dict[str, Any]) -> None:
     feeds = db.list_feeds(conn)
     if not feeds:
-        print("No feeds to fetch. Use 'feedr add <url>' to subscribe.")
+        print("No feeds to fetch. Use 'rssmds add <url>' to subscribe.")
         return
 
     results = fetch_all(conn, feeds, on_progress=lambda msg: print(msg))

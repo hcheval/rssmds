@@ -7,7 +7,7 @@ from .parser import parse_feed
 
 
 DEFAULT_TIMEOUT = 15
-USER_AGENT = "feedr/0.1"
+USER_AGENT = "rssmds/0.1"
 
 FetchResult = dict[str, str | None | list[dict[str, str | None]]]
 

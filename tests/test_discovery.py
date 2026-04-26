@@ -1,5 +1,5 @@
 import pytest
-from feedr.discovery import (
+from rssmds.discovery import (
     _extract_link_tags,
     _extract_anchor_links,
     _looks_like_xml_feed,

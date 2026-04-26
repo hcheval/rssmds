@@ -4,7 +4,7 @@ from typing import Any
 import yaml
 
 
-DEFAULT_DB_PATH = Path.cwd() / "feedr.db"
+DEFAULT_DB_PATH = Path.cwd() / "rssmds.db"
 
 DEFAULT_CONFIG: dict[str, Any] = {
     "db_path": str(DEFAULT_DB_PATH),
@@ -17,7 +17,7 @@ def load_config(path: str | None = None) -> dict[str, Any]:
     config = DEFAULT_CONFIG.copy()
 
     if path is None:
-        path = str(Path.home() / ".feedr" / "config.yml")
+        path = str(Path.home() / ".rssmds" / "config.yml")
 
     p = Path(path)
     if not p.exists():

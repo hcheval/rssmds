@@ -1,6 +1,6 @@
 import pytest
-from feedr.cli import main
-from feedr import db
+from rssmds.cli import main
+from rssmds import db
 
 
 @pytest.fixture

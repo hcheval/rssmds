@@ -353,12 +353,12 @@ def _page(title: str, body: str) -> str:
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{title} - feedr</title>
+    <title>{title} - rssmds</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <nav>
-        <a href="/" class="logo">feedr</a>
+        <a href="/" class="logo">rssmds</a>
         <a href="/">Entries</a>
         <a href="/feeds">Feeds</a>
         <a href="/stats">Stats</a>

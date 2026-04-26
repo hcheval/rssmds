@@ -1,4 +1,4 @@
-from feedr.formatting import (
+from rssmds.formatting import (
     format_entry_line,
     format_entry_detail,
     format_feed_list,

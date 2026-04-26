@@ -3,8 +3,8 @@ import threading
 import time
 import requests as http_requests
 
-from feedr import db
-from feedr.web import serve
+from rssmds import db
+from rssmds.web import serve
 
 
 @pytest.fixture
@@ -19,8 +19,8 @@ def server(tmp_path):
     conn.commit()
 
     from http.server import HTTPServer
-    from feedr.web import FeedrHandler, _conn
-    import feedr.web as web_module
+    from rssmds.web import FeedrHandler, _conn
+    import rssmds.web as web_module
     web_module._conn = conn
 
     srv = HTTPServer(("127.0.0.1", 0), FeedrHandler)
@@ -47,7 +47,7 @@ class TestWebIndex:
         base, _ = server
         resp = http_requests.get(f"{base}/")
         assert resp.status_code == 200
-        assert "feedr" in resp.text
+        assert "rssmds" in resp.text
 
     def test_index_shows_entries(self, server):
         base, _ = server

@@ -1,4 +1,4 @@
-# feedr
+# rssmds
 
 A terminal RSS/Atom feed reader with a web interface.
 
@@ -14,42 +14,42 @@ pip install requests pyyaml beautifulsoup4
 
 ```bash
 # subscribe to feeds
-python -m feedr add "https://blog.rust-lang.org/feed.xml"
-python -m feedr add "https://hnrss.org/newest?count=10"
+python -m rssmds add "https://blog.rust-lang.org/feed.xml"
+python -m rssmds add "https://hnrss.org/newest?count=10"
 
 # or discover feeds from a website
-python -m feedr discover "https://xkcd.com"
-python -m feedr discover "https://xkcd.com" --add   # subscribe automatically
+python -m rssmds discover "https://xkcd.com"
+python -m rssmds discover "https://xkcd.com" --add   # subscribe automatically
 
 # fetch new entries
-python -m feedr fetch
+python -m rssmds fetch
 
 # browse entries
-python -m feedr list
-python -m feedr list --unread
-python -m feedr list --feed 1 --limit 20
+python -m rssmds list
+python -m rssmds list --unread
+python -m rssmds list --feed 1 --limit 20
 
 # read an entry
-python -m feedr read 3
+python -m rssmds read 3
 
 # manage feeds
-python -m feedr feeds
-python -m feedr remove 2
+python -m rssmds feeds
+python -m rssmds remove 2
 
 # mark as read
-python -m feedr mark-read --feed 1
-python -m feedr mark-read --all
+python -m rssmds mark-read --feed 1
+python -m rssmds mark-read --all
 
 # stats
-python -m feedr stats
+python -m rssmds stats
 
 # export
-python -m feedr export opml
-python -m feedr export json -o entries.json
+python -m rssmds export opml
+python -m rssmds export json -o entries.json
 
 # web interface
-python -m feedr serve
-python -m feedr serve --port 9000
+python -m rssmds serve
+python -m rssmds serve --port 9000
 ```
 
 Then open http://127.0.0.1:8080 in a browser.
@@ -57,7 +57,7 @@ Then open http://127.0.0.1:8080 in a browser.
 ## Project structure
 
 ```
-feedr/
+rssmds/
   __main__.py    entry point
   cli.py         argument parsing and subcommands
   config.py      YAML configuration with defaults
@@ -71,12 +71,12 @@ feedr/
 
 ## Configuration
 
-Optional. Create `~/.feedr/config.yml`:
+Optional. Create `~/.rssmds/config.yml`:
 
 ```yaml
-db_path: /path/to/feedr.db
+db_path: /path/to/rssmds.db
 fetch_timeout: 30
 max_entries_per_list: 100
 ```
 
-Without a config file, the database is created as `feedr.db` in the current directory.
+Without a config file, the database is created as `rssmds.db` in the current directory.
